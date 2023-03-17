@@ -56,26 +56,21 @@
         var countdownElement = document.getElementById("countdown");
         countdownElement.innerHTML = "<span class='blue'>" + days + "</span>d " + "<span class='grey'>" + hours + "</span>h "
         + "<span class='black'>" + minutes + "</span>m " + "<span class='white'>" + seconds + "</span>s ";
-        
-        countDownDate = new Date(countDownDate.getTime() + 7 * 24 * 60 * 60 * 1000).getTime();
-x = setInterval(function() { 
-  location.reload(); 
-}, 3000); // reload the page after 3 seconds to reset the countdown for next week
 
-        // If the countdown is over, show a message
+        // If the countdown is over, show a message and reload the page after 3 seconds to reset the countdown for next week
         if (distance < 0) {
           clearInterval(x);
           countdownElement.innerHTML = "WWE Smackdown is LIVE!";
-          countDownDate = new Date(countDownDate.getTime() + 7 * 24 * 60 * 60 * 1000).getTime();
-          x = setInterval(function() { 
+          countDownDate = new Date(countDownDate + 7 * 24 * 60 * 60 * 1000);
+          setTimeout(function() { 
             location.reload(); 
-          }, 3000); // reload the page after 3 seconds to reset the countdown for next week
+          }, 3000);
         }
       }, 1000);
+
+      // Reload the page after 3 seconds to reset the countdown for next week
+      setTimeout(function() { 
+        location.reload(); 
+      }, 3000);
     </script>
   </head>
-  <body>
-    <h1>Countdown to <span class="blue">WWE</span> <span class="grey">Smackdown</span> on Friday at 8pm</h1>
-    <p id="countdown"></p>
-  </body>
-</html>
