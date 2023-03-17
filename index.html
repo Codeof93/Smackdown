@@ -34,7 +34,7 @@
     </style>
     <script>
       // Set the date for Friday at 8pm
-      var countDownDate = new Date("March 17, 2023 20:00:00").getTime();
+      var countDownDate = new Date("March 18, 2023 20:00:00").getTime();
 
       // Update the countdown every second
       var x = setInterval(function() {
@@ -57,7 +57,7 @@
         countdownElement.innerHTML = "<span class='blue'>" + days + "</span>d " + "<span class='grey'>" + hours + "</span>h "
         + "<span class='black'>" + minutes + "</span>m " + "<span class='white'>" + seconds + "</span>s ";
         
-        // If the countdown is over, show a message
+        // If the countdown is over, show a message and reset the countdown for next week
         if (distance < 0) {
           clearInterval(x);
           countdownElement.innerHTML = "WWE Smackdown is LIVE!";
