@@ -34,8 +34,23 @@
       }
     </style>
     <script>
-      // Set the date for Friday at 8pm
-      var countDownDate = new Date("March 17, 2023 20:00:00").getTime();
+      // Function to get the next Friday at 8pm
+      function getNextFriday() {
+        var d = new Date();
+        var friday = 5; // Friday is day 5
+        var currentDay = d.getDay();
+        var daysUntilFriday = friday - currentDay;
+
+        if (daysUntilFriday < 0) {
+          daysUntilFriday = daysUntilFriday + 7;
+        }
+
+        d.setDate(d.getDate() + daysUntilFriday);
+        d.setHours(20, 0, 0, 0);
+        return d.getTime();
+      }
+
+      var countDownDate = getNextFriday();
 
       var x = setInterval(function() {
         var now = new Date().getTime();
@@ -53,7 +68,7 @@
         if (distance < 0) {
           clearInterval(x);
           countdownElement.innerHTML = "WWE Smackdown is LIVE!";
-          countDownDate = new Date(countDownDate.getTime() + 7 * 24 * 60 * 60 * 1000);
+          countDownDate = getNextFriday();
           x = setInterval(function() {
             location.reload();
           }, 3000);
@@ -62,8 +77,5 @@
     </script>
   </head>
   <body>
-    <h1>WWE Smackdown Countdown Timer</h1>
-    <div id="countdown"></div>
-  </body>
-</html>
+    <h1>WWE Smackdown Countdown Timer</h1
    
