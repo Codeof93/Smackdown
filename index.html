@@ -15,19 +15,7 @@
         margin-top: 100px;
         font-weight: normal;
       }
-      .ladder {
-			display: block;
-			margin: 0 auto;
-			max-width: 100%;
-			height: auto;
-		}
-
-		.table-chair {
-			display: block;
-			margin: 0 auto;
-			max-width: 100%;
-			height: auto;
-		}
+      
       #countdown {
         font-size: 72px;
         margin-top: 50px;
@@ -87,31 +75,4 @@ var x = setInterval(function() {
     </script>
   </head>
   <body>
-    <h1>Countdown to <span class="blue">WWE</span> <span class="grey">Smackdown</span> on Friday at 8pm</h1>
-    <p id="countdown"></p>
-  </body>
-</html>
-
-
-        // Display the countdown in an HTML element
-        var countdownElement = document.getElementById("countdown");
-        countdownElement.innerHTML = "<span class='blue'>" + days + "</span>d " + "<span class='grey'>" + hours + "</span>h "
-        + "<span class='black'>" + minutes + "</span>m " + "<span class='white'>" + seconds + "</span>s ";
-        
-        // If the countdown is over, show a message and reset the countdown for next week
-        if (distance < 0) {
-          clearInterval(x);
-          countdownElement.innerHTML = "WWE Smackdown is LIVE!";
-          countDownDate = new Date(countDownDate.getTime() + 7 * 24 * 60 * 60 * 1000).getTime();
-          x = setInterval(function() { 
-            location.reload(); 
-          }, 3000); // reload the page after 3 seconds to reset the countdown for next week
-        }
-      }, 1000);
-    </script>
-  </head>
-  <body>
-    <h1>Countdown to <span class="blue">WWE</span> <span class="grey">Smackdown</span> on Friday at 8pm</h1>
-    <p id="countdown"></p>
-  </body>
-</html>
+   
